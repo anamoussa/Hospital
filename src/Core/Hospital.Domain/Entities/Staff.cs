@@ -2,12 +2,11 @@
 
 namespace Hospital.Domain.Entities;
 
-public class Doctor : User, IAuditEntity
+public class Staff : User, IAuditEntity
 {
-    public int DoctorId { get; set; }
-    public string Specialization { get; set; } = null!;
     public int DepartmentId { get; set; }
     public Department Department { get; set; } = new();
+    public string? Position { get; set; }
     public string? CreatedBy { get; set; }
     public DateTime CreatedOn { get; set; }
     public string? ModifiedBy { get; set; }
