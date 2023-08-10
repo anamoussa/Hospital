@@ -10,6 +10,7 @@ public class Patient : User, IAuditEntity
     public string Gender { get; set; } = null!;
     public string? Address { get; set; }
     public List<Appointment> Appointments { get; set; } = new();
+    public List<MedicalRecord> MedicalRecords { get; set; } = new();
     public string? CreatedBy { get; set; }
     public DateTime CreatedOn { get; set; }
     public string? ModifiedBy { get; set; }

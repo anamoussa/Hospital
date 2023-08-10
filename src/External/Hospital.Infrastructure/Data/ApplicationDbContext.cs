@@ -48,6 +48,12 @@ public class ApplicationDbContext : IdentityDbContext<Patient,IdentityRole,strin
             .WithOne();
         modelBuilder.Entity<Prescription>()
             .HasOne(p => p.Appointment);
-            
+
+        modelBuilder.Entity<MedicalRecord>()
+            .HasOne(m => m.Patient)
+            .WithMany(m => m.MedicalRecords)
+            .HasForeignKey(m => m.MedicalRecordID);
+        modelBuilder.Entity<MedicalRecord>()
+            .HasOne(m=>m.Prescription).WithOne();
     }
 }
