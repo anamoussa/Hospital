@@ -2,7 +2,7 @@
 
 namespace Hospital.Domain.Entities;
 
-public class Staff : User, IAuditEntity
+public class Staff : ApplicationUser, IAuditEntity
 {
     public int DepartmentId { get; set; }
     public Department Department { get; set; } = new();

@@ -2,9 +2,8 @@
 
 namespace Hospital.Domain.Entities;
 
-public class Doctor : User, IAuditEntity
+public class Doctor : ApplicationUser, IAuditEntity
 {
-    public int DoctorId { get; set; }
     public string Specialization { get; set; } = null!;
     public int DepartmentId { get; set; }
     public Department Department { get; set; } = new();

@@ -3,9 +3,8 @@
 namespace Hospital.Domain.Entities;
 
 
-public class Patient : User, IAuditEntity
+public class Patient : ApplicationUser, IAuditEntity
 {
-    public int PatientId { get; set; }
     public int Age { get; set; }
     public string Gender { get; set; } = null!;
     public string? Address { get; set; }
